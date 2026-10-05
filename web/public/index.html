@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1020">
+  <title>Mô hình Nguyên tử — Điều khiển</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='6' fill='%23ffb547'/><circle cx='16' cy='16' r='13' fill='none' stroke='%234fb3ff' stroke-width='2'/></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-logo" aria-hidden="true"></span>
+      <div>
+        <h1>Mô hình Nguyên tử</h1>
+        <p>1 electron = 1 servo · Cảm nhận cấu hình electron bằng tay</p>
+      </div>
+    </div>
+    <div class="status" aria-label="Trạng thái phần cứng">
+      <span class="status-item" id="status-metal"><i class="dot"></i>Board A · Kim loại</span>
+      <span class="status-item" id="status-nonmetal"><i class="dot"></i>Board B · Phi kim</span>
+    </div>
+  </header>
+
+  <main class="models">
+    <section class="panel" data-model="metal" aria-labelledby="title-metal">
+      <header class="panel-head">
+        <span class="panel-tag">Mô hình 1</span>
+        <h2 id="title-metal">Kim loại <small>— nhường e, tạo Cation</small></h2>
+      </header>
+      <div class="picker" role="group" aria-label="Chọn kim loại"></div>
+      <div class="atom-wrap">
+        <svg class="atom" viewBox="-200 -200 400 400" role="img" aria-label="Mô hình nguyên tử kim loại"></svg>
+      </div>
+      <div class="actions">
+        <button class="btn btn-ion" disabled>Tạo ion</button>
+        <button class="btn btn-ghost btn-reset">Reset</button>
+      </div>
+      <dl class="info"></dl>
+    </section>
+
+    <section class="panel" data-model="nonmetal" aria-labelledby="title-nonmetal">
+      <header class="panel-head">
+        <span class="panel-tag">Mô hình 2</span>
+        <h2 id="title-nonmetal">Phi kim <small>— nhận e, tạo Anion</small></h2>
+      </header>
+      <div class="picker" role="group" aria-label="Chọn phi kim"></div>
+      <div class="atom-wrap">
+        <svg class="atom" viewBox="-200 -200 400 400" role="img" aria-label="Mô hình nguyên tử phi kim"></svg>
+      </div>
+      <div class="actions">
+        <button class="btn btn-ion" disabled>Tạo ion</button>
+        <button class="btn btn-ghost btn-reset">Reset</button>
+      </div>
+      <dl class="info"></dl>
+    </section>
+  </main>
+
+  <section class="bond" aria-labelledby="title-bond">
+    <div class="bond-text">
+      <h2 id="title-bond">Liên kết ion</h2>
+      <p id="bond-desc">Chọn 1 kim loại và 1 phi kim để ghép thành hợp chất ion.</p>
+    </div>
+    <div class="bond-formula" id="bond-formula" aria-live="polite">— + —</div>
+    <div class="bond-actions">
+      <button class="btn btn-bond" id="btn-bond" disabled>Liên kết ion</button>
+      <button class="btn btn-ghost" id="btn-magnet" aria-pressed="false">Nam châm: TẮT</button>
+    </div>
+  </section>
+
+  <div class="toasts" id="toasts" aria-live="assertive"></div>
+  <div class="sr-only" id="announcer" aria-live="polite"></div>
+
+  <script src="elements.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

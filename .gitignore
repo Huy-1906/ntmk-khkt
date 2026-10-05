@@ -1,0 +1,14 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Bí mật (token Blynk, WiFi)
+.env
+.env.*
+secrets.h
+
+# Hệ điều hành / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
